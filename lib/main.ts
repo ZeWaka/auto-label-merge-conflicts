@@ -10,19 +10,19 @@ import {
 import { getPullrequestsWithoutMergeStatus, wait } from './util';
 
 export async function run() {
-  const conflictLabelName = core.getInput('CONFLICT_LABEL_NAME', {
+  const conflictLabelName: string = core.getInput('CONFLICT_LABEL_NAME', {
     required: true
   });
-  const myToken = core.getInput('GITHUB_TOKEN', {
+  const myToken: string = core.getInput('GITHUB_TOKEN', {
     required: true
   });
 
   const octokit = new github.GitHub(myToken);
   
-  var maxRetries = core.getInput('MAX_RETRIES', {
+  let maxRetries: number = core.getInput('MAX_RETRIES', {
     required: false
   });
-  var waitMs = core.getInput('WAIT_MS', {
+  let waitMs: number = core.getInput('WAIT_MS', {
     required: false
   });
     
