@@ -12,18 +12,17 @@ async function run() {
         required: true
     });
     const octokit = new github.GitHub(myToken);
-    
-    const maxRetries = core.getInput('MAX_RETRIES', {
+    let maxRetries = Number(core.getInput('MAX_RETRIES', {
         required: false
-    });
-    const waitMs = core.getInput('WAIT_MS', {
+    }));
+    let waitMs = Number(core.getInput('WAIT_MS', {
         required: false
-    });
-    
+    }));
     // Defaults for retries and waitms
-    if (!maxRetries) maxRetries = 5;
-    if (!waitMs) waitMs = 5000;
-    
+    if (!maxRetries)
+        maxRetries = 5;
+    if (!waitMs)
+        waitMs = 5000;
     // fetch label data
     let labelData;
     try {
