@@ -19,10 +19,10 @@ export async function run() {
 
   const octokit = new github.GitHub(myToken);
   
-  const maxRetries = core.getInput('MAX_RETRIES', {
+  var maxRetries = core.getInput('MAX_RETRIES', {
     required: false
   });
-  const waitMs = core.getInput('WAIT_MS', {
+  var waitMs = core.getInput('WAIT_MS', {
     required: false
   });
     
