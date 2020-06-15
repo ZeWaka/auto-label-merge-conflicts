@@ -2,8 +2,8 @@
   "name": "auto-label-merge-conflicts",
   "description": "Github Action to automatically label PRs with 'conflict' label",
   "private": true,
-  "author": "Marko Schilde",
-  "version": "2.2",
+  "author": "Marko Schilde & ZeWaka",
+  "version": "2.3",
   "scripts": {
     "build": "yarn lint && rm -rf dist && tsc -p ./tsconfig.json",
     "lint": "tslint -p ./tsconfig.json *.ts",
